@@ -2,7 +2,10 @@ import React from 'react'
 
 function Main() {
   return (
-    <div>Main</div>
+    <div>
+     <p> Encuentra la magia del teatro donde estés
+     </p>
+    </div>
   )
 }
 
