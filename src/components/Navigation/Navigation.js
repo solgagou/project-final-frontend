@@ -5,12 +5,13 @@ function Navigation() {
   return (
     <nav className="menu">
       <ul>
-        <li><Link to="/">Inicio</Link></li>        
-        <li><Link to="/data">Teatro</Link></li>     
-        <li><Link to="/about">Sobre mí</Link></li>  
+        <li><a href="#main">NUESTRA PROPUESTA</a></li>        
+        <li><Link to="/data">OBRAS</Link></li>     
+        <li><a href="#footer">CONTACTANOS</a></li>  
       </ul>
     </nav>
   );
 }
 
 export default Navigation
+

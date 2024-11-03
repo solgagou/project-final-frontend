@@ -2,7 +2,9 @@ import React from 'react'
 
 function Preloader() {
   return (
-    <div>Preloader</div>
+    <div className="preloader">
+      <p>Buscando obras...</p>
+    </div>
   )
 }
 

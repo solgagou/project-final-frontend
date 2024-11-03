@@ -5,19 +5,23 @@ import Main from '../Main/Main';
 import Navigation from '../Navigation/Navigation';
 import Footer from '../Footer/Footer';
 import Preloader from '../Preloader/Preloader';
-import DataPage from '../DataPage/DataPage';
+import SearchPage from '../SearchPage/SearchPage';
 import './app.css';
 
 function App() {
+  const [searchTerm, setSearchTerm] = React.useState(''); // Término de búsqueda
+  const [results, setResults] = React.useState([]); // Resultados de búsqueda
+  const [loading, setLoading] = React.useState(false); // Estado de carga
+  const [error, setError] = React.useState(''); // Manejo de errores 
+
   return (
     <div className="page">
         <Header/>
         <Navigation /> 
         <Switch>
           <Route path="/" exact component={Main} />
-          <Route path="/data" component={DataPage} />
+          <Route path="/data" component={SearchPage} />
         </Switch>
-        <Main/>
         <Footer/>
         <Preloader/>
       </div>
