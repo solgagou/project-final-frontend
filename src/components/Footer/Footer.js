@@ -7,9 +7,9 @@ function Footer() {
   return (
     <div className="footer">
       <ul className="footer__menu">
-        <li src={linkedinIcon} className="linkedin_icon" alt='linkedin icon'></li> 
-        <li src={gitIcon} className="github_icon" alt='git hub icon'></li> 
-        <li src={emailIcon} className="email_icon" alt='email icon'></li> 
+        <li><img src={linkedinIcon} className="linkedin_icon" alt='linkedin icon'/></li> 
+        <li><img src={gitIcon} className="github_icon" alt='git hub icon'/></li> 
+        <li><img src={emailIcon} className="email_icon" alt='email icon'/></li> 
       </ul>  
     </div>
   )

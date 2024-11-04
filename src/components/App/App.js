@@ -9,10 +9,10 @@ import SearchPage from '../SearchPage/SearchPage';
 import './app.css';
 
 function App() {
-  const [searchTerm, setSearchTerm] = React.useState(''); // Término de búsqueda
-  const [results, setResults] = React.useState([]); // Resultados de búsqueda
-  const [loading, setLoading] = React.useState(false); // Estado de carga
-  const [error, setError] = React.useState(''); // Manejo de errores 
+  const [searchTerm, setSearchTerm] = React.useState(''); 
+  const [results, setResults] = React.useState([]); 
+  const [loading, setLoading] = React.useState(false); 
+  const [error, setError] = React.useState('');  
 
   return (
     <div className="page">

@@ -22,10 +22,10 @@ function SearchPage() {
 
         <Preloader /> 
 
-         {/* Placeholder para el mensaje de error */}
-         <p className="error-message">Aquí aparecerá el mensaje de error si existe.</p>
+         
+         <p className="error-message">*mensaje de error si existe</p>
 
-         {/* Sección de obras destacadas */}
+         {/*obras destacadas */}
          <section className="featured__section">
           <h2>Obras Destacadas</h2>
           <div className="featured__list">
@@ -41,9 +41,8 @@ function SearchPage() {
          </section>
         
 
-         {/* Placeholder para los resultados */}
+         {/*resultados */}
         <div className="results">
-          {/* Ejemplo de una tarjeta de evento estática */}
           <div className="event__card">
             <h2>Título obra</h2>
             <p className="event_description">Descripción breve</p>
