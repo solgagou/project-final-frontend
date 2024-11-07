@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 function Navigation() {
   return (
-    <nav className="menu">
-      <ul>
-        <li><a href="#main">NUESTRA PROPUESTA</a></li>        
-        <li><Link to="/data">OBRAS</Link></li>     
-        <li><a href="#footer">CONTACTANOS</a></li>  
-      </ul>
-    </nav>
+   <nav className="nav-menu">
+    <ul className="nav-menu__list">
+      <li className="nav-menu__item"><a className="nav-menu__link" href="/#main">NUESTRA PROPUESTA</a></li>        
+      <li className="nav-menu__item"><Link to="/data" className="nav-menu__link">OBRAS</Link></li>     
+      <li className="nav-menu__item"><a className="nav-menu__link" href="#footer">CONTACTANOS</a></li>  
+    </ul>
+   </nav>
   );
 }
 

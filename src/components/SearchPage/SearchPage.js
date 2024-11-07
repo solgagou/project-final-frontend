@@ -1,25 +1,41 @@
 import React from 'react';
-import Header from '../Header/Header';
-import Navigation from '../Navigation/Navigation';
-import Footer from '../Footer/Footer';
+//import Header from '../Header/Header';
+//import Navigation from '../Navigation/Navigation';
+//import Footer from '../Footer/Footer';
 import Preloader from '../Preloader/Preloader';
+import searchIcon from '../../images/search_icon.svg';
+import locationIcon from '../../images/location_icon.svg';
 
 function SearchPage() {
   return (
     <div className="search__page">
-      <Header />
-      <Navigation />
       <main className="search__content">
-        <h1 className='search__title'>Buscar Eventos de Teatro</h1>
+       <section className="search__section">
+        <h1 className='search__title'>Buscar Obras de Teatro</h1>
         <form className='search__form'>
-          <input
-            className='search__input'
-            type="text"
-            placeholder="Buscar obras de teatro..."
-          />
-          <button type="submit">Buscar</button>
+          <div className="search__input-wrapper">
+            <span>
+              <img class="search__icon" src={searchIcon} alt="Buscar" />
+            </span> 
+            <input
+              className='search__input'
+              type="text"
+              placeholder="Obra de teatro..."
+            />
+          </div>
+          <div className="search__input-wrapper">
+            <span>
+              <img class="search__icon" src={locationIcon} alt="Place" />
+            </span> 
+            <input
+              className='search__input'
+              type="text"
+              placeholder="Ciudad"
+            />
+          </div>
         </form>
-
+        <button className='search__button' type="submit" onClick=''>Buscar</button>
+       </section>
         <Preloader /> 
 
          
@@ -52,7 +68,6 @@ function SearchPage() {
           </div>
         </div>
       </main>   
-      <Footer />
     </div>
   );
 }
