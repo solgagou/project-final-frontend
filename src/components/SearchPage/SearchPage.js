@@ -5,6 +5,7 @@ import React from 'react';
 import Preloader from '../Preloader/Preloader';
 import searchIcon from '../../images/search_icon.svg';
 import locationIcon from '../../images/location_icon.svg';
+import photo from '../../images/obra_notepreocupes.jpg';
 
 function SearchPage() {
   return (
@@ -43,30 +44,64 @@ function SearchPage() {
 
          {/*obras destacadas */}
          <section className="featured__section">
-          <h2>Obras Destacadas</h2>
-          <div className="featured__list">
-            <div className="event_card">
-              <h3 className="event_title">
-                <a className="event_link" href="#" target="_blank" rel="">Título obra</a>
-              </h3>
-              <p className="event_description">Descripción breve</p>
-              <p className="event_city">Ciudad</p>
-              <p className="event_day">Fecha y hora</p>
+          <div className="event__card">
+            <img className='event__photo' src={photo}></img>
+            <div className='event__info'>
+              <h3 className="event__title" onClick=''>Título</h3>
+              <p className="event__day">Fecha y hora</p>
+              <p className="event__address">Dirección, Ciudad</p>
+            </div>
+            <div className="overlay">
+              <p className="overlay__description">Descripción breve</p>
+            </div>
+          </div>
+          <div className="event__card">
+            <img className='event__photo' src={photo}></img>
+            <div className='event__info'>
+              <h3 className="event__title" onClick=''>No te preocupes por mí, yo me cuido</h3>
+              <p className="event__day">Sábado 7 de Diciembre</p>
+              <p className="event__address">Birimben 4, Amsterdam</p>
+            </div>
+            <div className="overlay">
+              <p className="overlay__description">Comedia dramática | 
+              En un paraje de la patagonia argentina, dos hermanas se acompañan desde siempre. Rosa y Lorenza sobrevivirán en su pequeña comunidad -compuesta por más animales que personas- hasta que sus propios deseos las separen: Rosa en busca de la aventura y Lorenza eligiendo su tierra como su nido eterno.</p>
+            </div>
+          </div>
+          <div className="event__card">
+            <img className='event__photo' src={photo}></img>
+            <div className='event__info'>
+              <h3 className="event__title" onClick=''>Título</h3>
+              <p className="event__day">Fecha y hora</p>
+              <p className="event__address">Dirección, Ciudad</p>
+            </div>
+            <div className="overlay">
+              <p className="overlay__description">Descripción breve</p>
+            </div>
+          </div>
+          <div className="event__card">
+            <img className='event__photo' src={photo}></img>
+            <div className='event__info'>
+              <h3 className="event__title" onClick=''>Título</h3>
+              <p className="event__day">Fecha y hora</p>
+              <p className="event__address">Dirección, Ciudad</p>
+            </div>
+            <div className="overlay">
+              <p className="overlay__description">Descripción breve</p>
             </div>
           </div>
          </section>
         
 
          {/*resultados */}
-        <div className="results">
-          <div className="event__card">
-            <h2>Título obra</h2>
-            <p className="event_description">Descripción breve</p>
-              <p className="event_city">Ciudad</p>
-              <p className="event_day">Fecha y hora</p>
-            <a className="event_information-link" href="#" target="_blank" rel="">Más información</a>
+        <section className="results">
+        <div className="event__card">
+            <img className='event__photo'></img>
+              <h3 className="event__title" onClick=''>Título</h3>
+              <p className="event__day">Fecha y hora</p>
+              <p className="event__description">Descripción breve</p>
+              <p className="event__address">Dirección, Ciudad</p>
           </div>
-        </div>
+         </section>
       </main>   
     </div>
   );
