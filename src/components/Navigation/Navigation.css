@@ -1,7 +1,7 @@
-.nav-menu {
+/*.nav-menu {
     display: flex;
     flex-direction: row;
-}
+} */
 
 .nav-menu__list {
     display: flex;
@@ -13,6 +13,7 @@
 }
 
 .nav-menu__item {
+    text-wrap: nowrap;
 
 }
 

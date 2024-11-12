@@ -7,7 +7,9 @@ function Header() {
   return (
     <div className="header">
       <img src={logo} className="header__logo" alt="Loop Teatral logo"/>
-      <Navigation />   
+      <div className='header__nav'>
+        <Navigation />   
+      </div> 
     </div>
   )
 }

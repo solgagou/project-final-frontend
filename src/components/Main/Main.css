@@ -1,21 +1,20 @@
 
 .main {
-    width: 100vw; 
-    min-height: 100vh; /* Altura mínima del banner */
+    min-height: 100vh;
     display: flex;
     flex-direction: column; 
-    /*justify-content: center;  */
-    align-items: center; /* Centra el contenido verticalmente */
-    padding: 40px 0;
+    justify-content: center;  
+    align-items: center; 
+    padding: 36px 0;
     background-color: #00D160;
 
 }
 
 .main__info {
-    padding: 20px;
+    padding: 24px;
     border-radius: 10px;
-    max-width: 600px; /* Limita el ancho del contenido */
-    text-align: center; /* Centra el texto */
+    max-width: 550px; 
+    text-align: center;
 }
 
 .main_title {
@@ -23,20 +22,11 @@
     margin-top: 20px;
     font-size: 60px;   
     font-weight: 700;
-    line-height: 76px;
-    /*text-align: left;*/
-
+    line-height: 84px;
 }
 
 .main_description {
     color: #000;
-}
-
-.button_section {
-    display: flex;
-    justify-content: center; /* Centra el botón */
-    padding: 20px 0; /* Espaciado alrededor del botón */
-    color:#000;
 }
 
 .main_button {
@@ -57,4 +47,20 @@
 .main_button:hover {
     background-color: #0255E5;
 
+}
+
+@media screen and (max-width: 800px) {
+
+    .main_title {
+        font-size: 55px;
+    }
+    
+  
+
+    .main_button {
+        width: 400px;
+        height: 100px;
+        font-size: 22px;
+        margin-top: 56px;
+    }
 }

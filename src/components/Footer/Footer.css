@@ -9,17 +9,14 @@
 }
 
 .footer__info {
-    margin-right: auto; /* Empuja hacia la izquierda */
     text-align: center;
-    margin: 16px 0;
+    margin: 36px 0;
 
 }
 
 .footer__copyright {
     color: white;
     text-align: center;
-    margin: 16px 0;
-
 }
 
 .footer__icons {
@@ -29,11 +26,31 @@
     justify-content: center;
     margin-top: 10px; 
 
- 
 }
 
 .github_icon, .linkedin_icon, .email_icon {
-width: 50px;
-height: 50px; 
+    width: 50px;
+    height: 50px; 
 }
 
+
+@media screen and (max-height: 800px) {
+    .footer {
+        max-height: 100px;
+    }
+
+    .footer__info {
+        margin-top: 76px;
+    
+    }
+    
+    .footer__copyright {
+        font-size: 12px;
+    }
+
+    .github_icon, .linkedin_icon, .email_icon {
+        width: 30px;
+        height: 30px; 
+    }
+    
+}

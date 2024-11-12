@@ -10,20 +10,20 @@ function Footer() {
         <p className='footer__copyright'>2024 @ Loop Teatral | Sol Gago</p>
         <ul className="footer__icons">
         <li>
-    <a href="https://www.linkedin.com/in/solgagou/" target="_blank" rel="noopener noreferrer">
-      <img src={linkedinIcon} className="linkedin_icon" alt="LinkedIn icon" />
-    </a>
-  </li>
-  <li>
-    <a href="https://github.com/solgagou" target="_blank" rel="noopener noreferrer">
-      <img src={gitIcon} className="github_icon" alt="GitHub icon" />
-    </a>
-  </li>
-  <li>
-    <a href="mailto:solgagou@gmail.com" target="_blank" rel="noopener noreferrer">
-      <img src={emailIcon} className="email_icon" alt="Email icon" />
-    </a>
-  </li>
+          <a href="https://www.linkedin.com/in/solgagou/" target="_blank" rel="noopener noreferrer">
+          <img src={linkedinIcon} className="linkedin_icon" alt="LinkedIn icon" />
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/solgagou" target="_blank" rel="noopener noreferrer">
+          <img src={gitIcon} className="github_icon" alt="GitHub icon" />
+          </a>
+        </li>
+        <li>
+          <a href="mailto:solgagou@gmail.com" target="_blank" rel="noopener noreferrer">
+          <img src={emailIcon} className="email_icon" alt="Email icon" />
+        </a>
+        </li>
         </ul>  
       </div>
     </div>

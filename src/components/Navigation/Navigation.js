@@ -7,7 +7,7 @@ function Navigation() {
     <ul className="nav-menu__list">
       <li className="nav-menu__item"><a className="nav-menu__link" href="/#main">NUESTRA PROPUESTA</a></li>        
       <li className="nav-menu__item"><Link to="/data" className="nav-menu__link">OBRAS</Link></li>     
-      <li className="nav-menu__item"><a className="nav-menu__link" href="#footer">CONTACTANOS</a></li>  
+      <li className="nav-menu__item"><a className="nav-menu__link" href="#footer">CONTÁCTANOS</a></li>  
     </ul>
    </nav>
   );
