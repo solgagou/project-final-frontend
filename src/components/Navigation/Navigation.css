@@ -1,7 +1,6 @@
-/*.nav-menu {
+.nav-menu {
     display: flex;
-    flex-direction: row;
-} */
+} 
 
 .nav-menu__list {
     display: flex;
@@ -28,7 +27,34 @@
 
 }
 
-.menu__contacts {
+/*.menu__contacts {
+
+}*/
+
+
+@media screen and (max-width: 660px)  {
+    
+    .nav-menu__list {
+        flex-direction: column;
+        gap: 10px;      
+        font-size: 12px;             
+        
+    }
+
+    .nav-menu__item {
+       text-align: center;       
+     }
 
 }
 
+@media screen and (max-width: 430px) {
+    .header {
+        width: 80%;
+    }
+
+    .nav-menu__item {
+        text-align: left;       
+      }
+}
+
+    

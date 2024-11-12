@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center; 
+    text-align: center;
     align-items: center;
     box-sizing: border-box;
     padding: 20px;
@@ -10,7 +11,6 @@
 
 .footer__info {
     text-align: center;
-    margin: 36px 0;
 
 }
 
@@ -24,6 +24,8 @@
     display: flex;
     gap: 15px;
     justify-content: center;
+    align-items: center;
+    padding: 0;
     margin-top: 10px; 
 
 }
@@ -41,7 +43,6 @@
 
     .footer__info {
         margin-top: 76px;
-    
     }
     
     .footer__copyright {
@@ -51,6 +52,31 @@
     .github_icon, .linkedin_icon, .email_icon {
         width: 30px;
         height: 30px; 
+    }
+    
+}
+
+@media screen and (max-width: 430px) {
+    .footer {
+        max-height: 50px;
+    }
+
+    .footer__info {
+        margin: 140px 40px 70px 40px;
+    }
+  
+    .footer__copyright {
+        font-size: 8px;
+    }
+
+    .footer__icons {
+        gap: 4px;
+        margin-top: 6px; 
+    }
+
+    .github_icon, .linkedin_icon, .email_icon {
+        width: 20px;
+        height: 20px; 
     }
     
 }
