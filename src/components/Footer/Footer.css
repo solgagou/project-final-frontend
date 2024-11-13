@@ -7,11 +7,11 @@
     box-sizing: border-box;
     padding: 20px;
     width: 100%;
+    margin-bottom: 0;
 }
 
 .footer__info {
     text-align: center;
-
 }
 
 .footer__copyright {
@@ -36,17 +36,15 @@
 }
 
 
-@media screen and (max-height: 800px) {
-    .footer {
-        max-height: 100px;
-    }
-
-    .footer__info {
-        margin-top: 76px;
-    }
-    
+@media screen and (max-width: 480px) and (max-height: 720px) {
+     
     .footer__copyright {
         font-size: 12px;
+    }
+
+    .footer__icons {
+        gap: 4px;
+        margin-top: 6px; 
     }
 
     .github_icon, .linkedin_icon, .email_icon {
@@ -56,27 +54,8 @@
     
 }
 
-@media screen and (max-width: 430px) {
-    .footer {
-        max-height: 50px;
-    }
 
-    .footer__info {
-        margin: 140px 40px 70px 40px;
-    }
+
   
-    .footer__copyright {
-        font-size: 8px;
-    }
 
-    .footer__icons {
-        gap: 4px;
-        margin-top: 6px; 
-    }
-
-    .github_icon, .linkedin_icon, .email_icon {
-        width: 20px;
-        height: 20px; 
-    }
-    
-}
+  

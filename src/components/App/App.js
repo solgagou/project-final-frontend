@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="page">
         <Header/>
-      
+        
         <Switch>
           <Route path="/" exact component={Main} />
           <Route path="/data" component={SearchPage} />

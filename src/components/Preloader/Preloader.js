@@ -4,7 +4,7 @@ function Preloader() {
   return (
     <div className="preloader">
       <div className="preloader__spinner"></div>
-      <p>Buscando obras...</p>
+      <p>{/*Buscando obras...*/}</p>
     </div>
   )
 }

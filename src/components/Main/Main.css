@@ -1,6 +1,5 @@
 
 .main {
-    min-height: 100vh;
     display: flex;
     flex-direction: column; 
     justify-content: center;  
@@ -49,7 +48,7 @@
 
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
 
     .main_title {
         font-size: 55px;
@@ -63,15 +62,15 @@
     }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 480px) {
 
     .main__info {
         width: 300px;
     }
 
     .main_title {
-        font-size: 40px;
-        line-height: 74px;
+        font-size: 50px;
+        line-height: 64px;
     }
 
     .main_description {

@@ -32,7 +32,7 @@
 }*/
 
 
-@media screen and (max-width: 660px)  {
+@media screen and (max-width: 768px)  {
     
     .nav-menu__list {
         flex-direction: column;
@@ -47,7 +47,7 @@
 
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 480px) {
     .header {
         width: 80%;
     }

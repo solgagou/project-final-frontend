@@ -5,6 +5,7 @@
     flex-direction: column; 
     align-items: center; 
     padding: 40px 0;
+    background-color: #fff;
 
 }
 
@@ -20,18 +21,18 @@
     align-items: center; 
     justify-content: center; 
     gap: 16px; 
+    margin-top: 80px;
 }
 
 .search__title {
    color: #00D160;
-  
-
+   font-size: 40px;
+   text-align: center;
 }
 
 .search__form {
     display: flex;
-    flex-direction: row;
-    
+    margin-top: 40px;
 
 }
 
@@ -39,8 +40,6 @@
     position: relative;
     display: flex;
     gap: 4px;
-
-
 }
 
 .search__input {
@@ -67,10 +66,10 @@
     width: 300px;
     height: 60px;
     border-radius: 100px;
+    border: 1px solid #000;
     opacity: 0px;
     background-color: #2F71E5; 
-    margin-top: 32px;
-
+    margin-top: 36px;
 }
 
 .search__button:hover {
@@ -84,17 +83,18 @@
 .featured__section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: 2px;
+    margin-top: 80px;
 }
 
 .event__card {
   position: relative;
   height: 500px;
   width: 400px;
-  border: 3px solid #000;
+  border: 3px inset #cfcfcf;
   border-radius: 8px;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color:#00D160;
   transition: background-color 0.3s ease;
   overflow: hidden; 
   transition: transform 0.3s ease;
@@ -102,7 +102,7 @@
 
 .event__card:hover {
     transform: scale(1.05);
-    background-color: #00D160;
+
 
 }
 
@@ -168,3 +168,59 @@
 
 
 /*.results {}*/
+
+
+
+@media screen and (max-width: 1280px) {
+
+    .featured__section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    .featured__section {
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+    }
+
+    .event__card {
+        width: 90vw;
+    }
+   
+}
+
+@media screen and (max-width: 768px) {
+
+    .search__section {
+       margin-top: 20px;
+    }
+    
+    .search__title {
+        font-size: 36px;
+    }
+
+    .search__form { 
+        flex-direction: column;
+    }
+
+    .event__card {
+        height: 200px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;    
+    }
+
+    .event__photo {
+        grid-column: 1;        
+        height: 100%;  
+        
+    }
+    
+    .event__info {
+        grid-column: 2/4;
+
+    }
+
+}

@@ -1,11 +1,12 @@
 import React from 'react';
-//import Header from '../Header/Header';
+import Header from '../Header/Header';
 //import Navigation from '../Navigation/Navigation';
 //import Footer from '../Footer/Footer';
 import Preloader from '../Preloader/Preloader';
 import searchIcon from '../../images/search_icon.svg';
 import locationIcon from '../../images/location_icon.svg';
-import photo from '../../images/obra_notepreocupes.jpg';
+import photo from '../../images/foto_obra_1.jpg';
+import secondPhoto from '../../images/foto_obra_2.jpg';
 
 function SearchPage() {
   return (
@@ -40,19 +41,20 @@ function SearchPage() {
         <Preloader /> 
 
          
-         <p className="error-message">*mensaje de error si existe</p>
+         <p className="error-message"></p>
 
          {/*obras destacadas */}
          <section className="featured__section">
           <div className="event__card">
-            <img className='event__photo' src={photo}></img>
+            <img className='event__photo' src={secondPhoto}></img>
             <div className='event__info'>
-              <h3 className="event__title" onClick=''>Título</h3>
-              <p className="event__day">Fecha y hora</p>
-              <p className="event__address">Dirección, Ciudad</p>
+              <h3 className="event__title" onClick=''>Desconcierto</h3>
+              <p className="event__day">Jueves 12 de Diciembre</p>
+              <p className="event__address">Trenelio 4, Puerto Madryn</p>
             </div>
             <div className="overlay">
-              <p className="overlay__description">Descripción breve</p>
+              <p className="overlay__description">Drama - Una pianista con un gran poder de convocatoria intenta ofrecer un concierto ante un piano que no suena. Irene Della Porta va descomponiéndose frente a un público que siempre está ahí para observarla en detalle. La obra es un monólogo en torno al ser y no ser y al poder y no poder. 
+              </p>
             </div>
           </div>
           <div className="event__card">
@@ -68,7 +70,7 @@ function SearchPage() {
             </div>
           </div>
           <div className="event__card">
-            <img className='event__photo' src={photo}></img>
+            <img className='event__photo'></img>
             <div className='event__info'>
               <h3 className="event__title" onClick=''>Título</h3>
               <p className="event__day">Fecha y hora</p>
@@ -79,7 +81,7 @@ function SearchPage() {
             </div>
           </div>
           <div className="event__card">
-            <img className='event__photo' src={photo}></img>
+            <img className='event__photo'></img>
             <div className='event__info'>
               <h3 className="event__title" onClick=''>Título</h3>
               <p className="event__day">Fecha y hora</p>
@@ -91,9 +93,7 @@ function SearchPage() {
           </div>
          </section>
         
-
-         {/*resultados */}
-        <section className="results">
+        {/* <section className="results">
         <div className="event__card">
             <img className='event__photo'></img>
               <h3 className="event__title" onClick=''>Título</h3>
@@ -101,10 +101,11 @@ function SearchPage() {
               <p className="event__description">Descripción breve</p>
               <p className="event__address">Dirección, Ciudad</p>
           </div>
-         </section>
+         </section>*/}
       </main>   
     </div>
   );
+  
 }
 
 export default SearchPage
