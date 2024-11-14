@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Router, Switch, useLocation } from 'react-router-dom';
+import { Route, Router, Routes, useLocation } from 'react-router-dom';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Navigation from '../Navigation/Navigation';
@@ -24,15 +24,16 @@ function App() {
       }
     }
   }, [location]);
+  
 
   return (
     <div className="page">
         <Header/>
         
-        <Switch>
-          <Route path="/" exact component={Main} />
-          <Route path="/data" component={SearchPage} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Main/>} />
+          <Route path="/data" element={<SearchPage/>} />
+        </Routes>
         <Footer/>
         <Preloader/>
       </div>
