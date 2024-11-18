@@ -1,14 +1,51 @@
-import React from 'react';
-import Header from '../Header/Header';
-//import Navigation from '../Navigation/Navigation';
-//import Footer from '../Footer/Footer';
+import React, { useState, useEffect } from 'react';
+import * as auth from "../../utils/auth";
 import Preloader from '../Preloader/Preloader';
 import searchIcon from '../../images/search_icon.svg';
 import locationIcon from '../../images/location_icon.svg';
-import photo from '../../images/foto_obra_1.jpg';
-import secondPhoto from '../../images/foto_obra_2.jpg';
+import showMore from '../../images/dropdown_icon.svg';
 
 function SearchPage() {
+  const [date, setDate] = useState(''); 
+  const [location, setLocation] = useState('');
+  const [results, setResults] = useState([]); 
+  const [searchExecuted, setSearchExecuted] = useState(false);
+  const [loading, setLoading] = useState(false); 
+  const [error, setError] = useState(''); 
+  const [visibleCount, setVisibleCount] = useState(3);
+
+    const handleDateChange = (e) => {
+      setDate(e.target.value);
+    };
+  
+    const handleLocationChange = (e) => {
+      setLocation(e.target.value);
+    };
+  
+    const handleSearchClick = async () => {
+      if (!date || !location) {
+        setError("Por favor, completa todos los campos.");
+        return;
+      }
+  
+      setError('');
+      setLoading(true);
+      setSearchExecuted(true);
+  
+      try {
+        const events = await auth.getPlaysData(date, location);
+    setResults(events);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    const handleShowMoreClick = () => {
+      setVisibleCount((prevCount) => prevCount + 3);
+    };
+
   return (
     <div className="search__page">
       <main className="search__content">
@@ -17,93 +54,71 @@ function SearchPage() {
         <form className='search__form'>
           <div className="search__input-wrapper">
             <span>
-              <img class="search__icon" src={searchIcon} alt="Buscar" />
+              <img className="search__icon" src={searchIcon} alt="Buscar" />
             </span> 
             <input
               className='search__input'
-              type="text"
-              placeholder="Obra de teatro..."
+              type="date"
+              placeholder="Fecha de la obra teatral"
+              value={date} 
+              onChange={handleDateChange} 
             />
           </div>
           <div className="search__input-wrapper">
             <span>
-              <img class="search__icon" src={locationIcon} alt="Place" />
+              <img className="search__icon" src={locationIcon} alt="Place" />
             </span> 
             <input
               className='search__input'
               type="text"
               placeholder="Ciudad"
+              value={location} 
+              onChange={handleLocationChange} 
             />
           </div>
         </form>
-        <button className='search__button' type="submit" onClick=''>Buscar</button>
+        <button className='search__button' type="button" onClick={handleSearchClick}>Buscar</button>
        </section>
-        <Preloader /> 
-
-         
-         <p className="error-message"></p>
-
-         {/*obras destacadas */}
-         <section className="featured__section">
-          <div className="event__card">
-            <img className='event__photo' src={secondPhoto}></img>
-            <div className='event__info'>
-              <h3 className="event__title" onClick=''>Desconcierto</h3>
-              <p className="event__day">Jueves 12 de Diciembre</p>
-              <p className="event__address">Trenelio 4, Puerto Madryn</p>
-            </div>
-            <div className="overlay">
-              <p className="overlay__description">Drama - Una pianista con un gran poder de convocatoria intenta ofrecer un concierto ante un piano que no suena. Irene Della Porta va descomponiéndose frente a un público que siempre está ahí para observarla en detalle. La obra es un monólogo en torno al ser y no ser y al poder y no poder. 
-              </p>
-            </div>
-          </div>
-          <div className="event__card">
-            <img className='event__photo' src={photo}></img>
-            <div className='event__info'>
-              <h3 className="event__title" onClick=''>No te preocupes por mí, yo me cuido</h3>
-              <p className="event__day">Sábado 7 de Diciembre</p>
-              <p className="event__address">Birimben 4, Amsterdam</p>
-            </div>
-            <div className="overlay">
-              <p className="overlay__description">Comedia dramática | 
-              En un paraje de la patagonia argentina, dos hermanas se acompañan desde siempre. Rosa y Lorenza sobrevivirán en su pequeña comunidad -compuesta por más animales que personas- hasta que sus propios deseos las separen: Rosa en busca de la aventura y Lorenza eligiendo su tierra como su nido eterno.</p>
-            </div>
-          </div>
-          <div className="event__card">
-            <img className='event__photo'></img>
-            <div className='event__info'>
-              <h3 className="event__title" onClick=''>Título</h3>
-              <p className="event__day">Fecha y hora</p>
-              <p className="event__address">Dirección, Ciudad</p>
-            </div>
-            <div className="overlay">
-              <p className="overlay__description">Descripción breve</p>
-            </div>
-          </div>
-          <div className="event__card">
-            <img className='event__photo'></img>
-            <div className='event__info'>
-              <h3 className="event__title" onClick=''>Título</h3>
-              <p className="event__day">Fecha y hora</p>
-              <p className="event__address">Dirección, Ciudad</p>
-            </div>
-            <div className="overlay">
-              <p className="overlay__description">Descripción breve</p>
-            </div>
-          </div>
-         </section>
         
-        {/* <section className="results">
-        <div className="event__card">
-            <img className='event__photo'></img>
-              <h3 className="event__title" onClick=''>Título</h3>
-              <p className="event__day">Fecha y hora</p>
-              <p className="event__description">Descripción breve</p>
-              <p className="event__address">Dirección, Ciudad</p>
+    {loading ? (
+      <Preloader />
+    ) : results.length > 0 ? (
+      <section className="results">
+        <div className='cards'>
+         {results.slice(0, visibleCount).map((event) => (
+           <div className="event__card" key={event.id}>
+            <img className='event__photo' src={event.images[0]?.url} alt={event.name}></img>
+            <div className="event__info">
+              <h3 className="event__name">{event.name}</h3>
+              <p className="event__date">{event.dates.start.localDate}</p>
+              <p className="event__location">
+              {event._embedded.venues[0]?.address.line1}, {" "} {event._embedded.venues[0]?.city.name}
+            </p>
           </div>
-         </section>*/}
-      </main>   
+          <div className="overlay">
+            <p className="overlay__description">{event.description || 'No description available'}</p>
+          </div>
+      </div>
+    ))}
     </div>
+
+    {visibleCount < results.length && (
+      <button 
+        className="show-more__button" 
+        type="button" 
+        onClick={handleShowMoreClick}>
+        Mostrar más
+        <img className="show-more__icon" src={showMore} alt="" />
+      </button>
+    )}
+      </section>
+
+    ) : searchExecuted && !loading && results.length === 0 ? (
+      <p className='error__message'>No se encontraron resultados</p>
+    ) : null}
+   
+    </main>   
+  </div>
   );
   
 }

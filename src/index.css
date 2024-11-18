@@ -20,3 +20,4 @@ code {
 @import url("./components/Main/main.css");
 @import url("./components/Footer/footer.css");
 @import url("./components/SearchPage/searchPage.css");
+@import url("./components/Preloader/preloader.css");
