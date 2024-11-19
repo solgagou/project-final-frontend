@@ -52,22 +52,32 @@
   
 }
 
+
 .search__icon {
     position: absolute;
     left: 10px;  
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none; 
-    width: 25px;
-    height: 25px;
+    width: 24px;
+    height: 24px;
 }
+
+.search__input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 10px;  
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px; 
+    height: 24px; 
+  }
+  
 
 .search__button {
     width: 300px;
     height: 60px;
     border-radius: 100px;
     border: 1px solid #000;
-    opacity: 0px;
     background-color: #2F71E5; 
     margin-top: 36px;
 }
@@ -76,15 +86,14 @@
     background-color: #0255E5;
 }
 
-/*.error__message {
-
-}*/
-
-.results {
- 
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center;
+.error__message {
+    margin-top: 80px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
 }
+
+/*.results {}*/
 
 .cards {
     display: grid;
@@ -108,8 +117,6 @@
 
 .event__card:hover {
     transform: scale(1.05);
-
-
 }
 
 .event__photo {
@@ -120,10 +127,9 @@
 }
 
 .event__info {
-    padding: 10px;
-    position: relative; /* Hace que el texto no se vea afectado por el overlay */
+    position: relative; /* para que el texto no se vea afectado por el overlay */
     z-index: 1; 
-    margin-left: 8px;
+    margin-left: 12px;
 }
 
 .overlay {
@@ -155,7 +161,7 @@
 
 .event__location {
     color: #000;
-    font-size: 16px;
+    font-size: 12px;
     
 }
 
@@ -170,17 +176,21 @@
   line-height: 24px;
 }
 
+.show-more__button-container {
+    text-align: center; 
+}
+
 .show-more__button {
+    position: relative;
+    display: inline-block;   
     width: 256px;
     height: 60px;
     background-color:#2F71E5;
     border-radius: 100px;
     border: 1px solid #000;
-    opacity: 0px;
     margin-top: 56px;
+    margin-bottom: 80px;
     cursor: pointer;
-    position: relative;
-    text-align: center; 
     font-size: 18px;   
 }
 

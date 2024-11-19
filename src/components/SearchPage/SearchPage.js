@@ -53,9 +53,6 @@ function SearchPage() {
         <h1 className='search__title'>Buscar Obras de Teatro</h1>
         <form className='search__form'>
           <div className="search__input-wrapper">
-            <span>
-              <img className="search__icon" src={searchIcon} alt="Buscar" />
-            </span> 
             <input
               className='search__input'
               type="date"
@@ -96,12 +93,13 @@ function SearchPage() {
             </p>
           </div>
           <div className="overlay">
-            <p className="overlay__description">{event.description || 'No description available'}</p>
+            <p className="overlay__description">{event.description || 'No hay descripción disponible'}</p>
           </div>
       </div>
     ))}
     </div>
 
+    <div className="show-more__button-container">
     {visibleCount < results.length && (
       <button 
         className="show-more__button" 
@@ -111,7 +109,8 @@ function SearchPage() {
         <img className="show-more__icon" src={showMore} alt="" />
       </button>
     )}
-      </section>
+    </div>
+    </section>
 
     ) : searchExecuted && !loading && results.length === 0 ? (
       <p className='error__message'>No se encontraron resultados</p>
@@ -120,6 +119,7 @@ function SearchPage() {
     </main>   
   </div>
   );
+  
   
 }
 
