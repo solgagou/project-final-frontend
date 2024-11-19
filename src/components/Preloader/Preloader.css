@@ -24,7 +24,7 @@ body {
 .text__preloader {
 	position: relative;
 	text-align: center;
-	top: -220px; /* Ajusta este valor para colocarlo justo debajo del spinner */
+	top: -220px;
 	color: #8b8b8b;
 	font-size: 16px;
 }

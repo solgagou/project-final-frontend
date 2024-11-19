@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import * as auth from "../../utils/auth";
 import Preloader from '../Preloader/Preloader';
-import searchIcon from '../../images/search_icon.svg';
 import locationIcon from '../../images/location_icon.svg';
 import showMore from '../../images/dropdown_icon.svg';
 
@@ -36,7 +35,7 @@ function SearchPage() {
         const events = await auth.getPlaysData(date, location);
     setResults(events);
       } catch (err) {
-        setError(err.message);
+        setError(error.message);
       } finally {
         setLoading(false);
       }
@@ -45,6 +44,12 @@ function SearchPage() {
     const handleShowMoreClick = () => {
       setVisibleCount((prevCount) => prevCount + 3);
     };
+
+
+    const handleCardClick= (url) => {
+      window.open(url, "_blank");
+    }; 
+
 
   return (
     <div className="search__page">
@@ -83,7 +88,7 @@ function SearchPage() {
       <section className="results">
         <div className='cards'>
          {results.slice(0, visibleCount).map((event) => (
-           <div className="event__card" key={event.id}>
+           <div className="event__card" key={event.id} onClick={() => handleCardClick(event.url)}>
             <img className='event__photo' src={event.images[0]?.url} alt={event.name}></img>
             <div className="event__info">
               <h3 className="event__name">{event.name}</h3>
