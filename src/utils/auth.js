@@ -1,5 +1,30 @@
 export const BASE_URL = "/discovery/v2/events.json";
 
+export const getDefaultPlaysData = () => {
+  const queryParams = new URLSearchParams();
+  queryParams.append("classificationName", "theatre");
+  queryParams.append("apikey", "wPq0ER3t8muFGyjlddz7FysKPr0XVZQM");
+
+  return fetch(`/discovery/v2/events.json?${queryParams.toString()}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error(`Error: ${res.status}`);
+      return res.json();
+    })
+    .then((data) => {
+      return data._embedded?.events || [];
+    })
+    .catch((error) => {
+      console.error("Error en la solicitud:", error);
+      throw new Error("Lo sentimos, algo ha salido mal.");
+    });
+};
+
+
 export const getPlaysData = (date = "", location = "") => {
   const queryParams = new URLSearchParams();
   queryParams.append("classificationName", "theatre");

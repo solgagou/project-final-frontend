@@ -25,7 +25,7 @@
 }
 
 .search__title {
-   color: #00D160;
+   text-shadow: 1px 1px 2px #00D160;
    font-size: 40px;
    text-align: center;
 }
@@ -52,6 +52,15 @@
   
 }
 
+.search-date__label {
+    position: absolute;
+    top: 100%; 
+    left: 0;    
+    margin-top: 4px;
+    color:#8b8b8b;   
+     
+
+}
 
 .search__icon {
     position: absolute;
@@ -79,11 +88,18 @@
     border-radius: 100px;
     border: 1px solid #000;
     background-color: #2F71E5; 
-    margin-top: 36px;
+    margin-top: 48px;
+    cursor: pointer;
 }
 
 .search__button:hover {
     background-color: #0255E5;
+}
+
+.error__search-message {
+    text-align: center;
+    font-size: 8px;
+    color: #ff0000;
 }
 
 .error__message {
@@ -91,6 +107,13 @@
     text-align: center;
     font-weight: 700;
     font-size: 24px;
+    color: #ff0000;
+}
+
+.dynamic__title {
+    text-align: center;
+    margin-top: 92px;
+    font-size: 32px;
 }
 
 /*.results {}*/
