@@ -1,13 +1,15 @@
 import React from 'react';
-//import './Header.css';
+import logo from '../../images/logo.png';
+import Navigation from '../Navigation/Navigation';
+//import './header.css';
 
 function Header() {
   return (
     <div className="header">
-      <h1>Teatro en Loop</h1>
-      <p>
-        Buscá obras de teatro en la ciudad que visites
-      </p>
+      <img src={logo} className="header__logo" alt="Loop Teatral logo"/>
+      <div className='header__nav'>
+        <Navigation />   
+      </div> 
     </div>
   )
 }
