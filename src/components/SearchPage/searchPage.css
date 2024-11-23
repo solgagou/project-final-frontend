@@ -9,12 +9,6 @@
 
 }
 
-/*.search__content {
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center; 
-} */
-
 .search__section {
     display: flex;
     flex-direction: column; 
@@ -58,8 +52,6 @@
     left: 0;    
     margin-top: 4px;
     color:#8b8b8b;   
-     
-
 }
 
 .search__icon {
@@ -81,7 +73,6 @@
     height: 24px; 
   }
   
-
 .search__button {
     width: 300px;
     height: 60px;
@@ -98,7 +89,7 @@
 
 .error__search-message {
     text-align: center;
-    font-size: 8px;
+    font-size: 12px;
     color: #ff0000;
 }
 
@@ -200,7 +191,13 @@
   margin: 16px;
   font-size: 16px;
   padding: 20px;
-  line-height: 24px;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  overflow: hidden; 
+  display: -webkit-box; 
+  -webkit-line-clamp: 8; 
+  line-clamp: 8; 
+  -webkit-box-orient: vertical; 
 }
 
 .show-more__button-container {

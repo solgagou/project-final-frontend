@@ -37,7 +37,7 @@ function SearchPage() {
       setLoading(true);
       try {
         const defaultEvents = await auth.getDefaultPlaysData();
-           console.log("Eventos obtenidos:", defaultEvents);
+       
         const uniqueEvents = filterUniqueEvents(defaultEvents); 
         setResults(uniqueEvents);
       } catch (err) {
@@ -50,65 +50,6 @@ function SearchPage() {
     fetchDefaultEvents();
   }, []);
 
-
-  /*const shuffleEvents = (events) => {
-    for (let i = events.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [events[i], events[j]] = [events[j], events[i]]; // Intercambia los eventos
-    }
-    return events;
-  };
-  
-  const diversifyEvents = (events, limitPerShow = 1) => {
-    const seenCounts = new Map();
-    const diverseEvents = [];
-  
-    events = shuffleEvents(events);
-
-    events.forEach((event) => {
-      const eventName = event.name;
-      const eventDate = event.date; 
-  
-      if (seenCounts.get(eventName) >= limitPerShow) {
-        return;
-      }
-  
-      if (!seenCounts.has(eventName)) {
-        seenCounts.set(eventName, 0);
-      }
-  
-      diverseEvents.push(event);
-
-      seenCounts.set(eventName, seenCounts.get(eventName) + 1);
-    });
-  
-    return diverseEvents;
-  };
-
-  
-  useEffect(() => {
-    const fetchDefaultEvents = async () => {
-      setLoading(true);
-      try {
-        const defaultEvents = await auth.getDefaultPlaysData();
-        console.log("Eventos obtenidos:", defaultEvents);
-        
-       if (defaultEvents.length === 1) {
-      setError("Solo se obtuvo un evento. No hay suficiente variedad.");
-    } else {
-      const diversifiedEvents = diversifyEvents(defaultEvents); 
-      setResults(diversifiedEvents);
-    }
-  } catch (err) {
-    setError("Error al cargar los eventos predeterminados");
-  } finally {
-    setLoading(false);
-  }
-};
-
-    fetchDefaultEvents();
-  }, []);
-*/
 
     const handleDateChange = (e) => {
       setDate(e.target.value);
@@ -149,7 +90,7 @@ function SearchPage() {
 
     const renderTitle = () => {
       if (searchExecuted && date && location) {
-        return `Resultados para ${location} el ${new Date(date).toLocaleDateString('es-ES')}:`;
+        return `Resultados para ${location} a partir del ${new Date(date).toLocaleDateString('es-ES')}:`;
       }
       return "Eventos destacados";
     };
@@ -168,7 +109,7 @@ function SearchPage() {
               value={date} 
               onChange={handleDateChange} 
             />
-            <label class="search-date__label">Elige la fecha del espectáculo</label>
+            <label className="search-date__label">Elige la fecha del espectáculo</label>
           </div>
           <div className="search__input-wrapper">
             <span>
