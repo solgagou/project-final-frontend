@@ -26,8 +26,6 @@ Consulta más sobre cómo escribir y ejecutar pruebas en Running Tests.
 Construye la aplicación para producción en la carpeta build.
 La aplicación estará lista para desplegarse en servidores.
 
-### `npm run eject`
-
 
 
 ## Dependencias principales
